@@ -1,0 +1,9 @@
+.card{
+    width: 28rem;
+    border: azure;
+    margin: auto;
+}
+.cardRow{
+    padding: 10px;
+    margin: 10px;
+}
