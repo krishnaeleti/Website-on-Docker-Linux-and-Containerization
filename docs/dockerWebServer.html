@@ -22,7 +22,8 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
     <a class="navbar-brand mb-0 h1" href="#">TeamDJ</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -37,7 +38,8 @@
                 <a class="nav-link" href="./team.html">TeamPage</a>
             </li>
             <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
                     Videos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -59,105 +61,76 @@
     </div>
 </nav>
 
-
-<div class="jumbotron text-center">
-    <h1 class="display-4">Docker Web server</h1>
-    <p class="lead">In this section we will introduce how to use docker to build a container and run a
-        localhost server.</p>
+<div class="jumbotron text-center" style="background-image: url(./pics/pic_4_1.png)">
+    <h1 class="display-4" style="color: white">Docker Web server</h1>
+    <p class="lead" style="color: white">In this section we will introduce how to use docker to build a container and
+        run a localhost server.</p>
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-7">
-            <div class="mt-4"></div>
             <h2></h2>
             <p class="first">
-                Containerization is a way to run applications
-                within a container. These containers bypass the
-                need for a guest operating system and hypervisor
-                all together. This in turn creates a much more
-                efficient process. Containerization also works
-                for things other than just laptops and desktop
-                computers, such as cloud machines, linux and windows
-                and mac. The main container programs being Docker and Kubernetes.
-
+                Docker, as a platform leverages containers – packages of an application along with all the tools it
+                needs to run to eliminate differences between environments, could help our work easier beginning
+                today by helping us reduce operating costs and accelerate deployments – among other benefits.
             </p>
-            <p class="second">
-
-
-                In the image “Architecture of Containerization”
-                we can see that on top of the Host OS, there is a
-                Container Engine. Which makes the containers.
-                They each have their own Run-Time System and each
-                running their own application. For additional information
-                there is a video linked to further explain the process.
-
-
-
+            <p>
+                This containerized software will operate and can be managed consistently regardless of
+                where it is installed. Additionally, containers are much easier to set up, start, stop, and maintain
+                than good old virtual machines. Of course, if you’re interested in knowing more about the differences between
+                these two technologies, the official Docker website provides a great explanation.
             </p>
         </div>
         <div class="col-sm-3">
             <div class="mt-4"></div>
             <div class="card border rounded">
-                <img src="./pics/ContainerizationPic1.jpg" width="100" class="card-img-top" alt="pic1">
+                <img src="./pics/pic_4_2.png" width="100%" class="card-img-top" alt="pic1">
                 <div class="card-body">
-                    <h5 class="card-title">Architecture of Containerization <a href="https://www.cloudmanagementinsider.com/containerization-vs-virtualization/" target=" _blank">Source</a> </h5>
+                    <h5 class="card-title">Figure 1: Docker applications of web server, database and web application.</h5>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-7">
-            <div class="mt-4"></div>
-            <h2></h2>
             <p>
-
-
-
+                Step 1: One of the amazing things about the Docker ecosystem is that there are tens of standard containers that
+                you can easily download and use. In the following example we will instantiate an Apache 2.4 container
+                named tecmint-web, detached from the current terminal. We will use an image called httpd:2.4 from
+                Docker Hub.
+                Our plan is to have requests made to our public IP address on port 8080 be redirected to port 80 on the
+                container. Also, instead of serving content from the container itself, we will serve a simple web page
+                from /home/user/website.
+                We do this by mapping /home/user/website/ on the /usr/local/apache2/htdocs/ on the container. Note that
+                you will need to use sudo or log in as root to proceed, and do not omit the forward slashes at the end
+                of each directory.
             </p>
+            <p># sudo docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4</p>
+            <p>Step 2: Now let’s create a simple web page named docker.html inside /home/user/website directory.</p>
+            <p># vim /home/user/website/docker.html</p>
+            </div>
+        <div class="col-sm-3">
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <p>Step 3: Next, point your browser to ***. ***. ***. ***:8080/docker.html (where ***. ***. ***. *** is your
+                host’s public IP address or localhost ip). You should be presented with the page we created previously.</p>
         </div>
         <div class="col-sm-3">
             <div class="mt-4"></div>
             <div class="card border rounded">
-                <img src="./pics/ContainerizationVideoPic.jpg" width="100" class="card-img-top" alt="pic1">
+                <img src="./pics/pic_4_3.png" width="100%" class="card-img-top" alt="pic1">
                 <div class="card-body">
-                    <h5 class="card-title">Containerization Video <a href="https://www.youtube.com/watch?v=0qotVMX-J5s&vl=en-US" target=" _blank">Link</a> </h5>
+                    <h5 class="card-title">Figure 2: Web page</h5>
                 </div>
             </div>
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-7">
-            <div class="mt-4"></div>
-            <h2></h2>
-            <p>
-
-
-
-            </p>
         </div>
 
     </div>
-</div>
-</div>
-<div class="row">
-    <div class="col-sm-7">
-        <div class="mt-4"></div>
-        <h2></h2>
-        <p>
-
-
-
-
-
-
-
-
-    </div>
-</div>
-
-
 </div>
 </body>
 </html>
