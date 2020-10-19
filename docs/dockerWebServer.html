@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <title>DockerWebServer Page</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+    <a class="navbar-brand mb-0 h1" href="#">TeamDJ</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="./index.html">HomePage <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./team.html">TeamPage</a>
+            </li>
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Videos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="virtualization.html">Virtualization</a>
+                    <a class="dropdown-item" href="containerization.html">Containerization</a>
+                    <a class="dropdown-item" href="comparison.html">Comparison of Containerization vs Virtualization</a>
+                    <a class="dropdown-item active disabled" href="./dockerWebServer.html">Docker Web Server</a>
+                    <a class="dropdown-item" href="./linuxDocker.html">Linux Docker commands</a>
+                    <a class="dropdown-item" href="./dockerPycharm.html">Docker and Pycharm</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Waiting for More</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="jumbotron text-center" style="background-image: url(./pics/pic_4_1.png)">
+    <h1 class="display-4" style="color: white">Docker Web server</h1>
+    <p class="lead" style="color: white">In this section we will introduce how to use docker to build a container and
+        run a localhost server.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+            <h2></h2>
+            <p class="first">
+                Docker, as a platform leverages containers – packages of an application along with all the tools it
+                needs to run to eliminate differences between environments, could help our work easier beginning
+                today by helping us reduce operating costs and accelerate deployments – among other benefits.
+            </p>
+            <p>
+                This containerized software will operate and can be managed consistently regardless of
+                where it is installed. Additionally, containers are much easier to set up, start, stop, and maintain
+                than good old virtual machines. Of course, if you’re interested in knowing more about the differences between
+                these two technologies, the official Docker website provides a great explanation.
+            </p>
+        </div>
+        <div class="col-sm-3">
+            <div class="mt-4"></div>
+            <div class="card border rounded">
+                <img src="./pics/pic_4_2.png" width="100%" class="card-img-top" alt="pic1">
+                <div class="card-body">
+                    <h5 class="card-title">Figure 1: Docker applications of web server, database and web application.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <p>
+                Step 1: One of the amazing things about the Docker ecosystem is that there are tens of standard containers that
+                you can easily download and use. In the following example we will instantiate an Apache 2.4 container
+                named tecmint-web, detached from the current terminal. We will use an image called httpd:2.4 from
+                Docker Hub.
+                Our plan is to have requests made to our public IP address on port 8080 be redirected to port 80 on the
+                container. Also, instead of serving content from the container itself, we will serve a simple web page
+                from /home/user/website.
+                We do this by mapping /home/user/website/ on the /usr/local/apache2/htdocs/ on the container. Note that
+                you will need to use sudo or log in as root to proceed, and do not omit the forward slashes at the end
+                of each directory.
+            </p>
+            <p># sudo docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4</p>
+            <p>Step 2: Now let’s create a simple web page named docker.html inside /home/user/website directory.</p>
+            <p># vim /home/user/website/docker.html</p>
+            </div>
+        <div class="col-sm-3">
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <p>Step 3: Next, point your browser to ***. ***. ***. ***:8080/docker.html (where ***. ***. ***. *** is your
+                host’s public IP address or localhost ip). You should be presented with the page we created previously.</p>
+        </div>
+        <div class="col-sm-3">
+            <div class="mt-4"></div>
+            <div class="card border rounded">
+                <img src="./pics/pic_4_3.png" width="100%" class="card-img-top" alt="pic1">
+                <div class="card-body">
+                    <h5 class="card-title">Figure 2: Web page</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
