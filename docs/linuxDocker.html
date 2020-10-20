@@ -61,9 +61,9 @@
     </div>
 </nav>
 
-<div class="jumbotron text-center" style="background-image: url(./pics/pic_4_1.png)">
-    <h1 class="display-4" style="color: white">Linux Docker Commands</h1>
-    <p class="lead" style="color: white">In this section we will introduce some linux commands and how to log in the docker
+<div class="jumbotron text-center" style="background-image: url(./pics/pic_5_1.jpg)">
+    <h1 class="display-4" style="color: gray">Linux Docker Commands</h1>
+    <p class="lead" style="color: gray">In this section we will introduce some linux commands and how to log in the docker
         in linux.</p>
 </div>
 
@@ -71,24 +71,69 @@
     <div class="row">
         <div class="col-sm-7">
             <h2></h2>
-            <p class="first">
-                Docker, as a platform leverages containers – packages of an application along with all the tools it
-                needs to run to eliminate differences between environments, could help our work easier beginning
-                today by helping us reduce operating costs and accelerate deployments – among other benefits.
-            </p>
-            <p>
-                This containerized software will operate and can be managed consistently regardless of
-                where it is installed. Additionally, containers are much easier to set up, start, stop, and maintain
-                than good old virtual machines. Of course, if you’re interested in knowing more about the differences between
-                these two technologies, the official Docker website provides a great explanation.
-            </p>
+            <h5>
+                Firstly, we will introduce some basic linux commands and how do they work.
+            </h5>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p>cd /tmp/target</p>
+                    <p>Explanation: go to target dictionary path</p>
+                </li>
+                <li class="list-group-item">
+                    <p>cat ./project/Dockerfile</p>
+                    <p>Explanation: catch the content of the Dockerfile and print it in the console.</p>
+                </li>
+                <li class="list-group-item">
+                    <p>mv ./project/Dockerfile ./D1</p>
+                    <p>Explanation: move the Dockerfile in project folder to current folder and name it as D1</p>
+                </li>
+                <li class="list-group-item">
+                    <p>vim ./project/Dockerfile</p>
+                    <p>Explanation: use editor vim to edit the file</p>
+                </li>
+                <li class="list-group-item">
+                    <p>rm ./project/Dockerfile</p>
+                    <p>Explanation: remove the Dockerfile file</p>
+                </li>
+            </ul>
         </div>
         <div class="col-sm-3">
             <div class="mt-4"></div>
             <div class="card border rounded">
-                <img src="./pics/pic_4_2.png" width="100%" class="card-img-top" alt="pic1">
+                <img src="./pics/pic_5_4.png" width="100%" class="card-img-top" alt="pic1">
                 <div class="card-body">
-                    <h5 class="card-title">Figure 1: Docker applications of web server, database and web application.</h5>
+                    <h5 class="card-title">Figure 1: Docker based on the linux</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <h2></h2>
+            <h5>
+                Followings are the steps of setting up and starting a docker container in linux:
+            </h5>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p>Step 1: Create Dockerfile and add content</p>
+                    <p># vim ./Dockerfile</p>
+                </li>
+                <li class="list-group-item">
+                    <p>Step 2: Build dockerfile to an image</p>
+                    <p># docker build --tag myDocker:1.0 .</p>
+                </li>
+                <li class="list-group-item">
+                    <p>Step 3: run a container from the image</p>
+                    <p># docker run --name test1 myDocker:1.0</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-3">
+            <div class="mt-4"></div>
+            <div class="card border rounded">
+                <img src="./pics/pic_5_3.png" width="100%" class="card-img-top" alt="pic1">
+                <div class="card-body">
+                    <h5 class="card-title">Figure 2: docker illustration</h5>
                 </div>
             </div>
         </div>
